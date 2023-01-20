@@ -1,0 +1,35 @@
+<!-- <p></p> Etiqueta para párrafos en HTML -->
+<p>Listado de heroes</p>
+<!-- <p></p> Etiqueta para listas desordenadas en HTML -->
+<ul>
+    <!-- <p></p> Etiqueta para elementos de listas en HTML -->
+    <!-- *ngFor repite elementso del DOM, sirve para recorrer y mostrar una lista, entre otras cosas-->
+    <!-- Para coger el índice en una lista se usa el let i = index -->
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i + 1}} - {{heroe}}
+    </li>
+</ul>
+
+<div>
+<!-- *ngIfElse con un else integrado muestar elementos del DOM de manera condicional solo si se cumple la condición -->
+<p *ngIf="heroeBorrado != ''; else noBorrado">Héroe borrado</p>
+<p>{{heroeBorrado}}</p>
+</div>
+
+<!-- Funciona con una referencia local se realiza con el simbolo de numeral adelante que signiica que si la condición del if no se cumple, se va a ejecutar el template -->
+<!-- La referencia local no es algo que exista en el lado del componente de Typescript, usualmente las referencias locales son del lado del template -->
+<ng-template #noBorrado>
+<h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<!-- <div> -->
+    <!-- *ngIf muestar elementos del DOM de manera condicional solo si se cumple la condición -->
+    <!-- <p *ngIf="heroeBorrado != ''">Héroe borrado</p>
+    <p>{{heroeBorrado}}</p>
+    </div> -->
+
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
+

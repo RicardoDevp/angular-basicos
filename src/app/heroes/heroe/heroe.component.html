@@ -1,0 +1,24 @@
+<h1>{{nombre}}</h1>
+
+<!-- Descrption list <dl> -->
+<!-- Table Descrption <td> -->
+<!-- Comentar Ctrl + K + C -->
+<!-- Indentar Mayús + Alt + F -->
+<dl>
+    <td>Nombre:</td>
+    <dd>{{nombre}}</dd>
+
+    <td>Edad:</td>
+    <dd>{{edad}}</dd>
+
+    <td>Capitalizado:</td>
+    <dd>{{nombre.toUpperCase()}}</dd>
+</dl>
+
+<button (click)="cambiarNombre()">
+    Cambiar héroe
+</button>
+
+<button (click)="cambiarEdad()">
+    Cambiar edad
+</button>
